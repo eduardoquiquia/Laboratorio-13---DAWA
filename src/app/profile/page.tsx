@@ -18,7 +18,10 @@ export default async function ProfilePage() {
               Name: <span className="font-semibold">{session?.user?.name}</span>
             </p>
             <p className="text-gray-700 mb-2">
-              Email: <span className="font-semibold">{session?.user?.email}</span>
+              Email: <span className="font-semibold">{session?.user?.email ?? '—'}</span>
+            </p>
+            <p className="text-gray-700 mb-2">
+              Proveedor: <span className="font-semibold capitalize">{session?.user?.provider}</span>
             </p>
             {session?.user?.image && (
               <>

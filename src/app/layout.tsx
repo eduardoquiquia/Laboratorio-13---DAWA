@@ -35,7 +35,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="w-full bg-black shadow-sm">
+        <nav className="w-full bg-black text-white shadow-sm">
           <div className="mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="text-xl font-semibold">
               MyAuthApp
@@ -56,6 +56,13 @@ export default async function RootLayout({
               {session?.user && (
                 <li>
                   <LogoutButton />
+                </li>
+              )}
+              {!session?.user && (
+                <li>
+                  <Link href="/signIn" className="hover:text-gray-400">
+                    Sign In
+                  </Link>
                 </li>
               )}
               {session?.user?.image && (

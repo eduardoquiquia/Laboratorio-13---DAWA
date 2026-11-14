@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     // "images.domains" está deprecado en Next 16 → se usa remotePatterns
     remotePatterns: [
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
     ],
   },
   turbopack: {
