@@ -30,7 +30,15 @@ const SCHEMA = `
 /** Crea la tabla "users" si no existe (solo se ejecuta una vez por proceso). */
 export function ensureSchema() {
   if (!globalForDb.schemaReady) {
-    globalForDb.schemaReady = pool.query(SCHEMA).then(() => undefined);
+    globalForDb.schemaReady = pool
+      .query(SCHEMA)
+      .then(() => undefined)
+      .catch((err) => {
+        // Si falla (BD caída, DATABASE_URL incorrecta...), no cachear el error:
+        // el siguiente intento volverá a ejecutar el CREATE TABLE.
+        globalForDb.schemaReady = undefined;
+        throw err;
+      });
   }
   return globalForDb.schemaReady;
 }

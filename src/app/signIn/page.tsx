@@ -48,9 +48,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-        <h1 className="text-2xl text-gray-800 font-bold mb-6 text-center">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-gray-200 px-4 py-10">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm border-t-4 border-violet-700">
+        <h1 className="text-2xl text-violet-900 font-bold mb-6 text-center">
           Sign In
         </h1>
 
@@ -66,7 +66,7 @@ export default function LoginPage() {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
               placeholder="tucorreo@ejemplo.com"
             />
           </div>
@@ -82,7 +82,7 @@ export default function LoginPage() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
               placeholder="••••••••"
             />
           </div>
@@ -96,22 +96,22 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition disabled:opacity-60"
+            className="w-full bg-violet-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-violet-800 transition disabled:opacity-60"
           >
             {loading ? 'Ingresando...' : 'Iniciar sesión'}
           </button>
         </form>
 
         <div className="flex items-center gap-3 my-6">
-          <div className="h-px flex-1 bg-gray-200" />
+          <div className="h-px flex-1 bg-violet-100" />
           <span className="text-xs text-gray-500 uppercase">o continúa con</span>
-          <div className="h-px flex-1 bg-gray-200" />
+          <div className="h-px flex-1 bg-violet-100" />
         </div>
 
         <div className="space-y-3">
           <button
             onClick={handleGoogleSignIn}
-            className="w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-black transition flex items-center justify-center gap-2"
+            className="w-full bg-orange-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-orange-600 transition flex items-center justify-center gap-2"
           >
             <FaGoogle />
             Continue with Google
@@ -119,7 +119,7 @@ export default function LoginPage() {
 
           <button
             onClick={handleGitHubSignIn}
-            className="w-full bg-gray-800 text-white py-2 px-4 rounded hover:bg-black transition flex items-center justify-center gap-2"
+            className="w-full bg-purple-950 text-white font-medium py-2 px-4 rounded-lg hover:bg-violet-900 transition flex items-center justify-center gap-2"
           >
             <FaGithub />
             Continue with GitHub
@@ -128,7 +128,7 @@ export default function LoginPage() {
 
         <p className="text-sm text-gray-600 text-center mt-6">
           ¿No tienes cuenta?{' '}
-          <Link href="/register" className="font-semibold text-gray-900 hover:underline">
+          <Link href="/register" className="font-semibold text-orange-600 hover:underline">
             Regístrate
           </Link>
         </p>

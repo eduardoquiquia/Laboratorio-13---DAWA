@@ -31,24 +31,24 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
 
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200 min-h-screen`}
       >
-        <nav className="w-full bg-black text-white shadow-sm">
-          <div className="mx-auto px-6 py-4 flex items-center justify-between">
-            <Link href="/" className="text-xl font-semibold">
-              MyAuthApp
+        <nav className="w-full bg-gradient-to-r from-violet-900 to-purple-700 text-white shadow-md border-b-4 border-orange-500">
+          <div className="mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+            <Link href="/" className="text-xl font-bold tracking-tight">
+              My<span className="text-orange-400">Auth</span>App
             </Link>
-            <ul className="flex items-center justify-center gap-6 text-sm">
+            <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm font-medium">
               <li>
-                <Link href="/dashboard" className="hover:text-gray-600">
+                <Link href="/dashboard" className="hover:text-orange-300 transition">
                   Dashboard
                 </Link>
               </li>
               {session?.user && (
                 <li>
-                  <Link href="/profile" className="hover:text-gray-600">
+                  <Link href="/profile" className="hover:text-orange-300 transition">
                     Profile
                   </Link>
                 </li>
@@ -60,7 +60,10 @@ export default async function RootLayout({
               )}
               {!session?.user && (
                 <li>
-                  <Link href="/signIn" className="hover:text-gray-400">
+                  <Link
+                    href="/signIn"
+                    className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg transition"
+                  >
                     Sign In
                   </Link>
                 </li>
@@ -72,7 +75,7 @@ export default async function RootLayout({
                     width={100}
                     src={session?.user?.image}
                     alt="Profile"
-                    className="w-10 h-10 rounded-full"
+                    className="w-10 h-10 rounded-full ring-2 ring-orange-400"
                   />
                 </li>
               )}

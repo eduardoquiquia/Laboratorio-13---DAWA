@@ -60,12 +60,12 @@ export default function RegisterPage() {
   };
 
   const inputClass =
-    'w-full border border-gray-300 rounded px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500';
+    'w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500';
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-        <h1 className="text-2xl text-gray-800 font-bold mb-6 text-center">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-gray-200 px-4 py-10">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm border-t-4 border-violet-700">
+        <h1 className="text-2xl text-violet-900 font-bold mb-6 text-center">
           Crear cuenta
         </h1>
 
@@ -101,7 +101,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition disabled:opacity-60"
+            className="w-full bg-violet-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-violet-800 transition disabled:opacity-60"
           >
             {loading ? 'Creando cuenta...' : 'Registrarme'}
           </button>
@@ -109,7 +109,7 @@ export default function RegisterPage() {
 
         <p className="text-sm text-gray-600 text-center mt-6">
           ¿Ya tienes cuenta?{' '}
-          <Link href="/signIn" className="font-semibold text-gray-900 hover:underline">
+          <Link href="/signIn" className="font-semibold text-orange-600 hover:underline">
             Inicia sesión
           </Link>
         </p>
